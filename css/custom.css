@@ -1,0 +1,7 @@
+
+.my-style {
+  padding: 10px;
+}
+.my-style:hover {
+  background-color: #F1F1F1;
+}
