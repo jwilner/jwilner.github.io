@@ -1,0 +1,43 @@
+---
+links:
+  - value: github
+    target: https://github.com/jwilner
+  - value: linkedin
+    target: https://www.linkedin.com/in/joewilner/
+---
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>{{ page.title }}</title>
+    <meta name="author" content="Joe Wilner" />
+    <!-- FONT -->
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'/>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/vendors/Skeleton/css/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="/vendors/Skeleton/css/skeleton.css" type="text/css" />
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="/css/custom.css" type="text/css" />
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <section class="header">
+        <h2 class="title">
+          joe wilner: <small>the website</small>
+        </h2>
+      </section>
+      {{ content }}
+      <section class="footer">
+        <div class='row'>
+          {% for link in page.links %}
+            <div class='columns two'>
+              <a href="{{ link.target }}">{{ link.value }}</a>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
