@@ -1,32 +1,24 @@
 ---
 layout: default
 title: joe wilner
+boxes:
+  - title: who?
+    body: A person vaguely intrigued by the typography of these <strong>w</strong>s
+  - title: what?
+    body: something something something
+  - title: where?
+    body: something something something
+  - title: when?
+    body: uh
 ---
-<div class='row'>
+{% for box in page.boxes %}
+  {% cycle '<div class="row">', nil %}
   <div class='one-half column my-style'>
-    <h5>who?</h5>
-    <p>A person vaguely intrigued by the typography of these <strong>w</strong>s</p>
+    <h5> {{ box.title }} </h5>
+    <p> {{ box.body }} </p>
   </div>
-  <div class='one-half column my-style'>
-    <h5>what?</h5>
-    <p>something something something</p>
-  </div>
-</div>
-<div class='row'>
-  <div class='one-half column my-style'>
-    <h5>where?</h5>
-    <p>something something something</p>
-  </div>
-  <div class='one-half column my-style'>
-    <h5>when?</h5>
-    <p>uh</p>
-  </div>
-</div>
-
-
-
-Hello worlds
-
+  {% cycle nil, '</div>' %}
+{% endfor %}
 {% highlight python linenos %}
 def do_some_shit(arg1, arg2):
     """
