@@ -1,3 +1,10 @@
+---
+links:
+  - value: github
+    target: https://github.com/jwilner
+  - value: linkedin
+    target: https://www.linkedin.com/in/joewilner/
+---
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
   <head>
@@ -16,16 +23,21 @@
   </head>
   <body>
     <div class="container">
-      <section class="header">
+      <section class="header bordered">
         <h2 class="title">
           joe wilner
         </h2>
-        <div style='display: inline-block;'>
-          <a href='https://github.com/jwilner'>github</a>
-          <a href='https://www.linkedin.com/in/joewilner/'>linkedin</a>
-        </div>
       </section>
       {{ content }}
+      <section class="footer bordered">
+        <div class='row'>
+          {% for link in page.links %}
+            <div class='columns two'>
+              <a href="{{ link.target }}">{{ link.value }}</a>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
     </div>
   </body>
 </html>

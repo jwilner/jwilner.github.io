@@ -3,22 +3,14 @@ layout: default
 title: joe wilner
 boxes:
   - title: who?
-    body: A person vaguely intrigued by the typography of these <strong>w</strong>s
+    body: A person vaguely intrigued by the typography of these <strong>w</strong>s. Also, a software engineer.
   - title: what?
-    body: something something something
+    body: Um, see <a href='#who'>who?</a> Or, I guess, more specifically, I work in Python (lot a lot), Java (a lot), JS (a lot), PHP (used to).
   - title: where?
-    body: something something something
+    body: New York, for eva eva.
   - title: when?
-    body: uh
+    body: I just needed four boxes to complete the for loop, but hopefully to the age of about 85.
 ---
-{% for box in page.boxes %}
-  {% cycle '<div class="row">', nil %}
-  <div class='one-half column my-style'>
-    <h5> {{ box.title }} </h5>
-    <p> {{ box.body }} </p>
-  </div>
-  {% cycle nil, '</div>' %}
-{% endfor %}
 {% highlight python linenos %}
 def do_some_shit(arg1, arg2):
     """
@@ -26,3 +18,12 @@ def do_some_shit(arg1, arg2):
     """
     return arg1 + arg2
 {% endhighlight %}
+{% for box in page.boxes %}
+  {% cycle '<div class="row">', nil %}
+  <div class='one-half column front-page-box'>
+    <a name="{{ box.title | remove: '?' }}"></a>
+    <h5> {{ box.title }} </h5>
+    <p> {{ box.body }} </p>
+  </div>
+  {% cycle nil, '</div>' %}
+{% endfor %}

@@ -1,7 +1,29 @@
+section.header {
+  border-bottom: grey solid 1px;
+}
 
-.my-style {
+.front-page-box {
   padding: 10px;
 }
-.my-style:hover {
+.front-page-box h5 {
+  text-align: center;
+  border-bottom: transparent solid 1px;
+}
+.front-page-box:hover {
   background-color: #F1F1F1;
 }
+.front-page-box:hover h5 {
+  border-bottom: black solid 1px;
+}
+
+section.footer {
+  text-align: center;
+  border-top: grey solid 1px;
+}
+section.footer > div.row {
+  padding-top: 10px;
+}
+section.footer div.two.columns:hover {
+  background-color: #F1F1F1;
+}
+
