@@ -5,22 +5,20 @@ boxes:
   - title: who?
     body: A person vaguely intrigued by the typography of these <strong>w</strong>s. Also, a software engineer.
   - code: |
-          def do_some_shit(arg1, arg2):
+          def do_some_stuff(arg1, arg2):
               """
               Does this thing understand docstrings?
               """
-              return do_some_shit(arg1, arg2)
+              return do_some_stuff(arg1, arg2)
   - title: what?
     body: Um, see <a href='#who'>who?</a> Or, I guess, more specifically, I work in Python (lot a lot), Java (a lot), JS (a lot), PHP (used to).
   - title: where?
-    body: New York, for eva eva.
+    body: New York.
   - code: |
           for i in range(300):
-              print("this is fucking awesome.")
+              print("this is awesome.")
   - title: when?
-    body: I just needed four boxes to complete the for loop, but hopefully to the age of about 85.
-  - code: |
-          whoa lookie here
+    body: uh...
 ---
 {% for box in page.boxes %}
   {% capture parity %}{% cycle 'even', 'odd' %}{% endcapture %}
