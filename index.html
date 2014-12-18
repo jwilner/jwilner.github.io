@@ -19,28 +19,26 @@ boxes:
               print("this is awesome.")
   - title: when?
     body: uh...
+cols: ['even', 'odd']
 ---
-{% for box in page.boxes %}
-  {% capture parity %}{% cycle 'even', 'odd' %}{% endcapture %}
-  {% if parity == 'even' and forloop.last %}
-    {% assign messy_end = true %}
-    {% assign end_class = 'offset-by-three' %}
-  {% endif %}
-  {% if parity == 'even' %}
-    <div class="row">
-  {% endif %}
-      <div class='one-half column {{ end_class }} front-page-box'>
-        {% if box.code %}
-          {% highlight python linenos %}
-            {{ box.code }}
-          {% endhighlight %}
-        {% else %}
-          <a name="{{ box.title | remove: '?' }}"></a>
-          <h5> {{ box.title }} </h5>
-          <p> {{ box.body }} </p>
+<div class='row'>
+  {% for col in page.cols %}
+    <div class='one-half column'>
+      {% for box in page.boxes %}
+        {% capture parity %}{% cycle 'even', 'odd' %}{% endcapture %}
+        {% if parity == col %}
+          <div class='front-page-box'>
+            {% if box.code %}
+              {% highlight python linenos %}
+                {{ box.code }}
+              {% endhighlight %}
+            {% else %}
+              <h5>{{ box.title }}</h5>
+              <p>{{ box.body }}</p>
+            {% endif %}
+          </div>
         {% endif %}
-      </div>
-  {% if parity == 'odd' or messy_end %}
-    </div> <!-- end row -->
-  {% endif %}
-{% endfor %}
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>
