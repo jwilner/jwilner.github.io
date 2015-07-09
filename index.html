@@ -1,44 +1,41 @@
 ---
 layout: default
 title: joe wilner
-boxes:
-  - title: who?
-    body: A person vaguely intrigued by the typography of these <strong>w</strong>s. Also, a software engineer.
-  - code: |
-          def do_some_stuff(arg1, arg2):
-              """
-              Does this thing understand docstrings?
-              """
-              return do_some_stuff(arg1, arg2)
-  - title: what?
-    body: Um, see <a href='#who'>who?</a> Or, I guess, more specifically, I work in Python (lot a lot), Java (a lot), JS (a lot), PHP (used to).
-  - title: where?
-    body: New York.
-  - code: |
-          for i in range(300):
-              print("this is awesome.")
-  - title: when?
-    body: uh...
-cols: ['even', 'odd']
 ---
 <div class='row'>
-  {% for col in page.cols %}
-    <div class='one-half column'>
-      {% for box in page.boxes %}
-        {% capture parity %}{% cycle 'even', 'odd' %}{% endcapture %}
-        {% if parity == col %}
-          <div class='front-page-box'>
-            {% if box.code %}
-              {% highlight python linenos %}
-                {{ box.code }}
-              {% endhighlight %}
-            {% else %}
-              <h5>{{ box.title }}</h5>
-              <p>{{ box.body }}</p>
-            {% endif %}
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-  {% endfor %}
+  <div class='front-page-box one-half column tall'>
+    <h5>who?</h5>
+    <p>I'm a software engineer. I work primarily in Python and Java, and I love thinking about distributed systems and readability. I currently manage a production infrastructure with strict uptime SLAs and tons of users and devices.</p>
+  </div>
+  <div class='front-page-box one-half column tall'>
+    {% highlight python linenos %}
+def do_some_stuff(arg1, arg2):
+    """
+    Does this thing understand docstrings?
+    """
+    return do_some_stuff(arg1, arg2)
+    {% endhighlight %}
+  </div>
+</div>
+<div class='row'>
+  <div class='front-page-box one-half column'>
+    <h5>what?</h5>
+    <p class="centered">Java | Python | AWS | Linux | MongoDB | MySQL | Spring | Pandas | bash | JS | PHP | clojure | git |  ansible</p>
+  </div>
+  <div class='front-page-box one-half column'>
+    <h5>where?</h5>
+    <p>Currently <a href="http://www.energyhub.com">EnergyHub</a> in my hometown of New York. Before that, <a href='http://www.recurse.com'>The Recurse Center</a> (née Hacker School).</p>
+  </div>
+</div>
+<div class='row'>
+  <div class='front-page-box one-half column'>
+    {% highlight clojure linenos %}
+(defn awesomeness []
+  (look at me go))
+    {% endhighlight %}
+  </div>
+  <div class='front-page-box one-half column'>
+    <h5>when?</h5>
+    <p>You tell me.</p>
+  </div>
 </div>
