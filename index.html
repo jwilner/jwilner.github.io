@@ -1,41 +1,42 @@
 ---
 layout: default
 title: joe wilner
+techs:
+- java
+- python
+- spring
+- bash
+- linux
+- aws
+- docker
+- mongodb
+- redis
+- mysql
+- rabbitmq
+books:
+- effective java
+- "js: the good parts"
+- the go programming language
+- structure and interpretation of computer programs
+- unix / linux system admin handbook
 ---
 <div class='row'>
-  <div class='front-page-box one-half column tall'>
-    <h5>who?</h5>
-    <p>I'm a software engineer. I work primarily in Python and Java, and I love thinking about distributed systems and readability. I currently manage a production infrastructure with strict uptime SLAs and tons of users and devices.</p>
+  <div class='column two-thirds'>
+    <p>I'm a software engineer in Brooklyn, New York.</p>
+    <p>Currently, I work at <a href="https://www.energyhub.com">EnergyHub</a>, where we connect utilities to smart-home devices to control load on the grid.</p>
+    <p>My day-to-day work is mainly writing backend Java (Spring) microservices; I also spend a lot of time in our Python codebase and working with the AWS API.</p>
+    <p>In my personal projects, I dabble in everything from clojurescript to golang. I also read a lot of programming books.</p>
   </div>
-  <div class='front-page-box one-half column tall'>
-    {% highlight python linenos %}
-def do_some_stuff(arg1, arg2):
-    """
-    Does this thing understand docstrings?
-    """
-    return do_some_stuff(arg1, arg2)
-    {% endhighlight %}
-  </div>
-</div>
-<div class='row'>
-  <div class='front-page-box one-half column'>
-    <h5>what?</h5>
-    <p class="centered">Java | Python | AWS | Linux | MongoDB | MySQL | Spring | Pandas | bash | JS | PHP | clojure | git |  ansible</p>
-  </div>
-  <div class='front-page-box one-half column'>
-    <h5>where?</h5>
-    <p>Currently <a href="http://www.energyhub.com">EnergyHub</a> in my hometown of New York. Before that, <a href='http://www.recurse.com'>The Recurse Center</a> (née Hacker School).</p>
-  </div>
-</div>
-<div class='row'>
-  <div class='front-page-box one-half column'>
-    {% highlight clojure linenos %}
-(defn awesomeness []
-  (look at me go))
-    {% endhighlight %}
-  </div>
-  <div class='front-page-box one-half column'>
-    <h5>when?</h5>
-    <p>You tell me.</p>
+  <div class='column one-third' id='sidebar'>
+    <h5>tech I use</h5>
+    {% for tech in page.techs %}
+    <span>{{ tech }}</span>
+    {% if forloop.last == false %}&middot;{% endif %}
+    {% endfor %}
+    <h5>books I think about</h5>
+    {% for book in page.books %}
+    <span>{{ book }}</span>
+    {% if forloop.last == false %}&middot;{% endif %}
+    {% endfor %}
   </div>
 </div>
